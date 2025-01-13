@@ -265,8 +265,8 @@ dwarfs_comp_arguments=(-l7 -C zstd:level=19 --metadata-compression null \
                             -S 21 -B 1 --order nilsimsa \
                             -W 12 -w 4 --no-create-timestamp)
 
-# Enable NVIDIA_HANDLER by default
-NVIDIA_HANDLER="${NVIDIA_HANDLER:-1}"
+# Disable NVIDIA_HANDLER by default
+NVIDIA_HANDLER="${NVIDIA_HANDLER:-0}"
 
 unset script_is_symlink
 if [ -L "${script_literal}" ]; then
