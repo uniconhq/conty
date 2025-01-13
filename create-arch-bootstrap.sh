@@ -59,10 +59,10 @@ extra_pkgs="nano ttf-dejavu ttf-liberation firefox mpv geany pcmanfm \
 # You can add packages that you want and remove packages that you don't need
 # Apart from packages from the official Arch repos, you can also specify
 # packages from the Chaotic-AUR repo
-export packagelist="${audio_pkgs} ${core_pkgs} ${video_pkgs} ${wine_pkgs} ${devel_pkgs} ${gaming_pkgs} ${extra_pkgs}"
+export packagelist="${devel_pkgs}"
 
 # If you want to install AUR packages, specify them in this variable
-export aur_packagelist="faugus-launcher-git"
+export aur_packagelist=""
 
 # ALHP is a repository containing packages from the official Arch Linux
 # repos recompiled with -O3, LTO and optimizations for modern CPUs for
