@@ -848,6 +848,9 @@ run_bwrap () {
 			--setenv PATH "${CUSTOM_PATH}" \
    			--setenv XDG_DATA_DIRS "/usr/local/share:/usr/share:${XDG_DATA_DIRS}" \
 			"${command_line[@]}"
+
+  # Preserve the exit code of the executed command
+  bwrap_exit_code=$?
 }
 
 exit_function () {
@@ -1354,4 +1357,9 @@ else
 	exit 1
 fi
 
-exit
+# If we successfully ran the command in the sandbox, return the executed command's exit code (in bwrap) else 0
+if [ -n "${bwrap_exit_code}" ]; then
+  exit "${bwrap_exit_code}"
+else
+  exit
+fi
