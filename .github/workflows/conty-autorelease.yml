@@ -38,24 +38,17 @@ jobs:
             rm conty.sh
           fi
 
-      - name: Delete tag and release
-        run: |
-          if gh release view auto; then
-            gh release delete auto --cleanup-tag -yes
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Tag commit
-        uses: rickstaa/action-create-tag@v1
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
         with:
-          tag: "auto"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          name: Auto Release
-          tag_name: auto 
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
+          name: ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
           files: ./conty.sh*
-          prerelease: true
-          draft: false
+          make_latest: true
