@@ -34,6 +34,7 @@ In its default release, it includes, among others, these apps:
 [Gamescope](https://github.com/ValveSoftware/gamescope),
 [RetroArch](https://www.retroarch.com),
 [DuckStation](https://www.duckstation.org/),
+[PCSX2 PlayStation 2 emulator](https://pcsx2.net),
 [Sunshine](https://github.com/LizardByte/Sunshine),
 [Genymotion](https://www.genymotion.com/),
 [OBS Studio](https://obsproject.com/),
@@ -81,6 +82,8 @@ $ chmod +x conty.sh
 ```
 
 Chmod only need to be executed once (per file). You can now [start using Conty](#usage).
+
+Or you can install from [gentoo-zh overlay](https://github.com/microcai/gentoo-zh/tree/master/games-emulation/conty).
 
 ###  Requirements
 

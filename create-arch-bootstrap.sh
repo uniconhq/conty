@@ -53,7 +53,7 @@ gaming_pkgs="lutris python-protobuf steam steam-native-runtime steamtinkerlaunch
 
 extra_pkgs="nano ttf-dejavu ttf-liberation firefox mpv geany pcmanfm \
 	htop qbittorrent speedcrunch gpicview file-roller openbox lxterminal \
-	yt-dlp minizip nautilus genymotion jre17-openjdk"
+	yt-dlp minizip nautilus genymotion jre17-openjdk gnome-themes-extra"
 
 # Packages to install
 # You can add packages that you want and remove packages that you don't need
@@ -415,6 +415,7 @@ rm -f "${bootstrap}"/var/cache/pacman/pkg/*
 # This is needed for bubblewrap to be able to bind real files/dirs to them
 # later in the conty-start.sh script
 mkdir "${bootstrap}"/media
+mkdir "${bootstrap}"/initrd
 mkdir -p "${bootstrap}"/usr/share/steam/compatibilitytools.d
 touch "${bootstrap}"/etc/asound.conf
 touch "${bootstrap}"/etc/localtime
